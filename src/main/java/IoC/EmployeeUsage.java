@@ -14,9 +14,11 @@ public class EmployeeUsage {
 //        System.out.println(employee.getTasks());
 //        System.out.println(employee.getReport());
 
-        Employee employeeSecretary = context.getBean("employeeSecretary", Employee.class);
+        EmployeeSecretary employeeSecretary = context.getBean("employeeSecretary", EmployeeSecretary.class);
         System.out.println(employeeSecretary.getTasks());
         System.out.println(employeeSecretary.getReport());
+        System.out.println(employeeSecretary.getCompanyName());
+        System.out.println("Email: ".concat(employeeSecretary.getEmail()));
 
         context.close();
 

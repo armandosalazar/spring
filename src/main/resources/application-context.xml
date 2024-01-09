@@ -21,5 +21,7 @@
     <bean id="employeeSecretary" class="IoC.EmployeeSecretary">
         <!-- Dependency injection with setter -->
         <property name="reportCreation" ref="report"/>
+        <property name="companyName" value="AsCompany"/>
+        <property name="email" value="secretary@ascompany.com"/>
     </bean>
 </beans>
