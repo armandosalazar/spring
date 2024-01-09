@@ -7,6 +7,14 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd"
 >
+    <!-- Dependency creation -->
+    <bean id="report" class="IoC.Report"/>
 
-    <bean id="employee" class="IoC.EmployeeBoss"/>
+    <!-- Dependency injection -->
+    <!-- If we want to inject a dependency into a bean, we need to use the ref attribute of the <constructor-arg> element -->
+    <!-- The ref attribute takes the name of the bean we want to inject -->
+    <bean id="employee" class="IoC.EmployeeBoss">
+        <!-- Dependency injection -->
+        <constructor-arg ref="report"/>
+    </bean>
 </beans>

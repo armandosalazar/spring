@@ -12,6 +12,7 @@ public class EmployeeUsage {
 
         Employee employee = context.getBean("employee", Employee.class);
         System.out.println(employee.getTasks());
+        System.out.println(employee.getReport());
 
         context.close();
 
