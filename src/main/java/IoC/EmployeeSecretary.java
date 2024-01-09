@@ -1,9 +1,9 @@
 package IoC;
 
 public class EmployeeSecretary implements Employee {
-    private final ReportCreation reportCreation;
+    private ReportCreation reportCreation;
 
-    public EmployeeSecretary(ReportCreation reportCreation) {
+    public void setReportCreation(ReportCreation reportCreation) {
         this.reportCreation = reportCreation;
     }
 
@@ -16,4 +16,6 @@ public class EmployeeSecretary implements Employee {
     public String getReport() {
         return reportCreation.getReport().concat(" and I'm secretary");
     }
+
+
 }

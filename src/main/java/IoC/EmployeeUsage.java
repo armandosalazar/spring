@@ -10,9 +10,13 @@ public class EmployeeUsage {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
 
-        Employee employee = context.getBean("employee", Employee.class);
-        System.out.println(employee.getTasks());
-        System.out.println(employee.getReport());
+//        Employee employee = context.getBean("employee", Employee.class);
+//        System.out.println(employee.getTasks());
+//        System.out.println(employee.getReport());
+
+        Employee employeeSecretary = context.getBean("employeeSecretary", Employee.class);
+        System.out.println(employeeSecretary.getTasks());
+        System.out.println(employeeSecretary.getReport());
 
         context.close();
 

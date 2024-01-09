@@ -10,11 +10,16 @@
     <!-- Dependency creation -->
     <bean id="report" class="IoC.Report"/>
 
-    <!-- Dependency injection -->
+    <!-- Dependency injection with constructor -->
     <!-- If we want to inject a dependency into a bean, we need to use the ref attribute of the <constructor-arg> element -->
     <!-- The ref attribute takes the name of the bean we want to inject -->
     <bean id="employee" class="IoC.EmployeeBoss">
-        <!-- Dependency injection -->
+        <!-- Dependency injection with constructor -->
         <constructor-arg ref="report"/>
+    </bean>
+    <!-- Dependency injection with setter -->
+    <bean id="employeeSecretary" class="IoC.EmployeeSecretary">
+        <!-- Dependency injection with setter -->
+        <property name="reportCreation" ref="report"/>
     </bean>
 </beans>
