@@ -3,6 +3,16 @@ package IoC;
 public class EmployeeBoss implements Employee {
     private final ReportCreation reportCreation;
 
+    // Init method: called after constructor
+    public void init() {
+        System.out.println("[*] Tasks before bean is ready");
+    }
+
+    // Destroy method: called before closing context
+    public void destroy() {
+        System.out.println("[*] Tasks before bean is destroyed");
+    }
+
     // Dependency injection via constructor
     public EmployeeBoss(ReportCreation reportCreation) {
         this.reportCreation = reportCreation;
