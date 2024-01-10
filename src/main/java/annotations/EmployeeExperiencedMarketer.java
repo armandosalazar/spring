@@ -2,9 +2,11 @@ package annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype") // Every time we call getBean() we will get a new instance of this class
 public class EmployeeExperiencedMarketer implements Employee {
 
     // Constructor injection
