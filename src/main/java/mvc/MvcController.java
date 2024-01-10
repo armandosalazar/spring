@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MvcController {
 
     @RequestMapping("/")
-    public String home() {
-        return "home";
+    public String index() {
+        return "index";
     }
 
 }
