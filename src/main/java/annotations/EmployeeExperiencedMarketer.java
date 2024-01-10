@@ -1,6 +1,7 @@
 package annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,6 +22,8 @@ public class EmployeeExperiencedMarketer implements Employee {
 
     // Field injection
     @Autowired
+    @Qualifier("financialReportExt")
+    // Spring will look for a bean with the name "financialReportExt" and inject it here
     private FinancialReportCreation financialReportCreation;
 
     @Override
