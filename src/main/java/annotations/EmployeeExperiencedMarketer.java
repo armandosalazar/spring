@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class EmployeeExperiencedMarketer implements Employee {
-    private FinancialReportCreation financialReportCreation;
 
     // Constructor injection
     // @Autowired: Spring will automatically look for a bean that implements FinancialReportCreation and inject it here
@@ -15,10 +14,14 @@ public class EmployeeExperiencedMarketer implements Employee {
 //    }
 
     // Setter injection
+//    @Autowired
+//    public void setFinancialReportCreation(FinancialReportCreation financialReportCreation) {
+//        this.financialReportCreation = financialReportCreation;
+//    }
+
+    // Field injection
     @Autowired
-    public void setFinancialReportCreation(FinancialReportCreation financialReportCreation) {
-        this.financialReportCreation = financialReportCreation;
-    }
+    private FinancialReportCreation financialReportCreation;
 
     @Override
     public String getTasks() {
