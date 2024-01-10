@@ -2,12 +2,26 @@ package annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype") // Every time we call getBean() we will get a new instance of this class
+// @Scope("prototype") // Every time we call getBean() we will get a new instance of this class
+// For prototype scope, Spring will not call @PostConstruct and @PreDestroy
+// For singleton scope, Spring will call @PostConstruct and @PreDestroy only once
 public class EmployeeExperiencedMarketer implements Employee {
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("Executed after constructor");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        System.out.println("Executed before bean is destroyed");
+    }
 
     // Constructor injection
     // @Autowired: Spring will automatically look for a bean that implements FinancialReportCreation and inject it here
