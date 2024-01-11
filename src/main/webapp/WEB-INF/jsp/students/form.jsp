@@ -17,7 +17,23 @@
 <%--@elvariable id="student" type="mvc.model.Student"--%>
 <form:form action="add-student" modelAttribute="student">
     First name: <form:input path="firstName"/><br/>
-    Last name: <form:input path="lastName"/><br/><br>
+    Last name: <form:input path="lastName"/><br/>
+    Topic:
+    <%--<form:select path="optional" multiple="true"> --%>
+    <form:select path="optional">
+        <form:option value="Maths" label="Maths"/>
+        <form:option value="Physics" label="Physics"/>
+        <form:option value="Chemistry" label="Chemistry"/>
+    </form:select>
+    <br>
+    Mexico: <form:radiobutton path="country" value="Mexico"/>
+    England: <form:radiobutton path="country" value="England"/>
+    France: <form:radiobutton path="country" value="France"/>
+    <br>
+    Spanish: <form:checkbox path="language" value="Spanish"/>
+    English: <form:checkbox path="language" value="English"/>
+    French: <form:checkbox path="language" value="French"/>
+    <br><br>
     <input type="submit" value="Add student"/>
 </form:form>
 

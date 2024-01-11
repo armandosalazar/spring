@@ -13,7 +13,10 @@
 </head>
 <body>
 <h1>Students</h1>
-Student: ${student.firstName} ${student.lastName} <br/>
+Student: <strong>${student.firstName} ${student.lastName}</strong><br/>
+Topic selected: <strong>${student.optional}</strong><br>
+Country: <strong>${student.country}</strong><br>
+Language(s): <strong>${student.language}</strong><br>
 
 </body>
 </html>
