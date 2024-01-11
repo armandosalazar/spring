@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("/forms")
 public class FormsController {
-    @RequestMapping("/forms")
+    @RequestMapping
     public String forms() {
         return "forms";
     }
@@ -18,7 +19,7 @@ public class FormsController {
         return "process-form";
     }
 
-    @RequestMapping("process-form-model")
+    @RequestMapping("/process-form-model")
     // public String processFormModel(HttpServletRequest request, Model model) {
     public String processFormModel(@RequestParam("name") String name, Model model) {
         // String name = request.getParameter("name");

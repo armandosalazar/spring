@@ -11,14 +11,14 @@
     <title>Forms</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/process-form" method="get">
+<form action="forms/process-form" method="get">
     <label>
         <input type="text" name="name" value="Armando"/>
     </label>
     <input type="submit" value="Send"/>
 </form>
 
-<form action="${pageContext.request.contextPath}/process-form-model" method="get">
+<form action="${pageContext.request.contextPath}/forms/process-form-model" method="get">
     <label>
         <input type="text" name="name" value="Armando Salazar"/>
     </label>
