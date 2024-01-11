@@ -16,7 +16,9 @@
 
 <%--@elvariable id="student" type="mvc.model.Student"--%>
 <form:form action="add-student" modelAttribute="student">
-    First name: <form:input path="firstName"/><br/>
+    First name: <form:input path="firstName"/>
+    <form:errors path="firstName" cssStyle="color: red;"/>
+    <br/>
     Last name: <form:input path="lastName"/><br/>
     Topic:
     <%--<form:select path="optional" multiple="true"> --%>

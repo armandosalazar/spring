@@ -1,6 +1,11 @@
 package mvc.model;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class Student {
+    @NotNull(message = "is required")
+    @Size(min = 2, message = "must be at least 2 characters")
     private String firstName;
     private String lastName;
     private String optional;
