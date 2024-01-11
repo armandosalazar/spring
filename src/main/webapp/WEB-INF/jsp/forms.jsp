@@ -12,7 +12,16 @@
 </head>
 <body>
 <form action="${pageContext.request.contextPath}/process-form" method="get">
-    <input type="text" name="name" value="Armando"/>
+    <label>
+        <input type="text" name="name" value="Armando"/>
+    </label>
+    <input type="submit" value="Send"/>
+</form>
+
+<form action="${pageContext.request.contextPath}/process-form-model" method="get">
+    <label>
+        <input type="text" name="name" value="Armando Salazar"/>
+    </label>
     <input type="submit" value="Send"/>
 </form>
 

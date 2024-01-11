@@ -14,5 +14,7 @@
 <p>${param}</p>
 <p>Hi! your name is ${param.name}</p>
 
+${message}
+
 </body>
 </html>

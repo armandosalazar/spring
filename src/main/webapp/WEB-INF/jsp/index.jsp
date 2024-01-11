@@ -9,9 +9,12 @@
 <html lang="es">
 <head>
     <title>First Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<h1>First Example with MVC in Spring</h1>
-<a href="${pageContext.request.contextPath}/forms">Forms</a>
+<h1 class="text-xl font-bold">First Example with MVC in Spring</h1>
+<a
+        class="slate-600"
+        href="${pageContext.request.contextPath}/forms">Forms</a>
 </body>
 </html>
