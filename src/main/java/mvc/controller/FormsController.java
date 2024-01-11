@@ -4,21 +4,26 @@ package mvc.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/forms")
 public class FormsController {
-    @RequestMapping
+
+    // Get /forms
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public String forms() {
         return "forms";
     }
 
+    // Get /forms/process-form
     @RequestMapping("/process-form")
     public String processForm() {
         return "process-form";
     }
 
+    // Get /forms/process-form-model
     @RequestMapping("/process-form-model")
     // public String processFormModel(HttpServletRequest request, Model model) {
     public String processFormModel(@RequestParam("name") String name, Model model) {

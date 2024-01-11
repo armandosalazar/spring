@@ -18,6 +18,9 @@
 <a
         class="text-slate-600"
         href="${pageContext.request.contextPath}/forms">Forms</a>
+<a
+        class="text-slate-600"
+        href="students/show-form">Students</a>
 
 <img alt="picture of whiteboard" src="${pageContext.request.contextPath}/static/img/whiteboard.jpg" width="250px">
 </body>
