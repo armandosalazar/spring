@@ -14,14 +14,13 @@
 >
 
     <mvc:annotation-driven/>
-    <context:component-scan base-package="mvc.controller"/>
+    <mvc:resources mapping="/static/**" location="/static/"/>
 
+    <context:component-scan base-package="mvc.controller"/>
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
-    <mvc:resources mapping="/static/**" location="/static/"/>
 
 </beans>
