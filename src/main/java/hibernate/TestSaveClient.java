@@ -19,9 +19,18 @@ public class TestSaveClient {
         Session session = factory.openSession();
         try {
             Client client = new Client("John", "Doe", "123 Main Street");
+
+            // start a transaction
             session.beginTransaction();
-            session.save(client);
+            // save the student object
+            session.persist(client);
+
+            Client clientInserted = session.get(Client.class, client.getId());
+            System.out.println("[*] " + clientInserted.toString());
+
+            // commit transaction
             session.getTransaction().commit();
+
             System.out.println("Done!");
             session.close();
         } finally {
