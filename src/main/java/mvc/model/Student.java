@@ -10,11 +10,13 @@ public class Student {
     private String optional;
     private String country;
     private String language;
-    @Email(message = "must be a valid email address")
-    private String email;
     @Min(value = 18, message = "must be greater than or equal to 18")
     @Max(value = 60, message = "must be less than or equal to 60")
     private int age;
+    @Email(message = "must be a valid email address")
+    private String email;
+    @Pattern(regexp = "^[0-9]{5}", message = "must be 5 digits")
+    private String zipCode;
 
     public String getFirstName() {
         return firstName;
@@ -70,5 +72,13 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 }

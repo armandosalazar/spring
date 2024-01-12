@@ -19,6 +19,7 @@ Topic selected: <strong>${student.optional}</strong><br>
 Country: <strong>${student.country}</strong><br>
 Language(s): <strong>${student.language}</strong><br>
 Email: <strong>${student.email}</strong><br>
+Zip Code: <strong>${student.zipCode}</strong><br>
 
 </body>
 </html>

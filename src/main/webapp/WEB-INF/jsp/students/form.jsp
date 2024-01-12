@@ -24,6 +24,8 @@
     <form:errors path="age" cssStyle="color: red;"/><br/>
     Email: <form:input path="email"/>
     <form:errors path="email" cssStyle="color: red;"/><br/>
+    Zip Code: <form:input path="zipCode"/>
+    <form:errors path="zipCode" cssStyle="color: red;"/><br/>
     Topic:
     <%--<form:select path="optional" multiple="true"> --%>
     <form:select path="optional">
