@@ -1,6 +1,7 @@
 package mvc.model;
 
 import jakarta.validation.constraints.*;
+import mvc.validation.ZipCode;
 
 public class Student {
     @NotNull(message = "not can be null")
@@ -15,7 +16,8 @@ public class Student {
     private int age;
     @Email(message = "must be a valid email address")
     private String email;
-    @Pattern(regexp = "^[0-9]{5}", message = "must be 5 digits")
+    // @Pattern(regexp = "^[0-9]{5}", message = "must be 5 digits")
+    @ZipCode
     private String zipCode;
 
     public String getFirstName() {
