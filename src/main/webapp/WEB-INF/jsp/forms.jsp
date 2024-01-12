@@ -11,6 +11,7 @@
     <title>Forms</title>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/">Home</a>
 <form action="forms/process-form" method="get">
     <label>
         <input type="text" name="name" value="Armando"/>
