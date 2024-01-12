@@ -22,6 +22,10 @@ public class ClientQueries {
                 .getResultList();
         clients.forEach(System.out::println);
 
+        session.createSelectionQuery("select cl from Client cl where cl.id = 1 or cl.firstName = 'Luis'", Client.class)
+                .getResultList()
+                .forEach(System.out::println);
+
         session.getTransaction().commit();
         session.close();
         factory.close();
