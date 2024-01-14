@@ -3,7 +3,6 @@ package hibernate.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "client")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +12,12 @@ public class Client {
     @Column(name = "last_name")
     private String lastName;
     private String address;
+
+    //@OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
+    //@JoinColumn(name = "client_details_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "client_details_id", referencedColumnName = "id")
+    private ClientDetails clientDetails;
 
     public Client() {
     }
@@ -49,6 +54,14 @@ public class Client {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public ClientDetails getClientDetails() {
+        return clientDetails;
+    }
+
+    public void setClientDetails(ClientDetails clientDetails) {
+        this.clientDetails = clientDetails;
     }
 
     @Override
