@@ -2,6 +2,9 @@ package hibernate.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "clients")
 public class Client {
@@ -19,6 +22,13 @@ public class Client {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "client_details_id")
     private ClientDetails clientDetails;
+    @OneToMany(mappedBy = "client", cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE,
+            CascadeType.DETACH,
+            CascadeType.REFRESH
+    })
+    private List<Order> orders;
 
     public Client() {
     }
@@ -73,5 +83,11 @@ public class Client {
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    public void addOrder(Order order) {
+        if (orders == null) orders = new ArrayList<>();
+        orders.add(order);
+        order.setClient(this);
     }
 }

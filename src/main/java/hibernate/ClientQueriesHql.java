@@ -6,9 +6,9 @@ import org.hibernate.SessionFactory;
 
 import java.util.List;
 
-public class ClientQueries {
+public class ClientQueriesHql {
     public static void main(String[] args) {
-        SessionFactory factory = HibernateUtils.getSessionFactory();
+        SessionFactory factory = HibernateUtil.getSessionFactory();
 
         Session session = factory.openSession();
         session.beginTransaction();

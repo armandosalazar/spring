@@ -4,9 +4,9 @@ import hibernate.model.Client;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class DeleteClient {
+public class DeleteClientHql {
     public static void main(String[] args) {
-        SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
 
         int id = 6;

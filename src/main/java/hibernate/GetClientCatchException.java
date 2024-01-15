@@ -4,16 +4,15 @@ import hibernate.model.ClientDetails;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class GetClient {
+public class GetClientCatchException {
     public static void main(String[] args) {
-        SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
 
         int id = 1;
         try {
             session.beginTransaction();
             ClientDetails clientDetails = session.get(ClientDetails.class, id);
-            session.remove(clientDetails);
             session.getTransaction().commit();
 
             System.out.println(clientDetails);

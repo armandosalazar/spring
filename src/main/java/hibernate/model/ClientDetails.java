@@ -11,7 +11,7 @@ public class ClientDetails {
     private String web;
     private String phone;
     private String comments;
-    @OneToOne(mappedBy = "clientDetails", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "clientDetails")
     @JoinColumn(name = "client_id")
     private Client client;
 

@@ -6,7 +6,7 @@ import org.hibernate.SessionFactory;
 
 public class UpdateClient {
     public static void main(String[] args) {
-        SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
 
         session.beginTransaction();
