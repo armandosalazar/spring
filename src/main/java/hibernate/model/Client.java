@@ -16,7 +16,7 @@ public class Client {
     //@OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
     //@JoinColumn(name = "client_details_id")
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "client_details_id", referencedColumnName = "id")
+    @JoinColumn(name ="id")
     private ClientDetails clientDetails;
 
     public Client() {
