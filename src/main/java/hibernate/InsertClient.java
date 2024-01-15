@@ -1,7 +1,7 @@
 package hibernate;
 
-import hibernate.model.Client;
-import hibernate.model.ClientDetails;
+import hibernate.entity.Client;
+import hibernate.entity.ClientDetails;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 

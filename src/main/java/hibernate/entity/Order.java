@@ -1,4 +1,4 @@
-package hibernate.model;
+package hibernate.entity;
 
 import jakarta.persistence.*;
 

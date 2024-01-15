@@ -1,7 +1,7 @@
 package hibernate;
 
-import hibernate.model.Client;
-import hibernate.model.Order;
+import hibernate.entity.Client;
+import hibernate.entity.Order;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 

@@ -1,4 +1,4 @@
-package hibernate.model;
+package hibernate.entity;
 
 import jakarta.persistence.*;
 
@@ -22,7 +22,8 @@ public class Client {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "client_details_id")
     private ClientDetails clientDetails;
-    @OneToMany(mappedBy = "client", cascade = {
+    @OneToMany(
+            fetch = FetchType.EAGER, mappedBy = "client", cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE,
             CascadeType.DETACH,

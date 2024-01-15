@@ -1,6 +1,6 @@
 package hibernate;
 
-import hibernate.model.Client;
+import hibernate.entity.Client;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -12,7 +12,7 @@ public class TestSaveClient {
         // SessionFactory factory = HibernateUtils.getSessionFactory();
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
-                .addAnnotatedClass(hibernate.model.Client.class)
+                .addAnnotatedClass(hibernate.entity.Client.class)
                 .buildSessionFactory();
 
         // create session

@@ -1,6 +1,6 @@
 package hibernate;
 
-import hibernate.model.Client;
+import hibernate.entity.Client;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -13,7 +13,7 @@ public class ClientQueriesHql {
         Session session = factory.openSession();
         session.beginTransaction();
         String query = "from Client";
-        session.createQuery(query, hibernate.model.Client.class)
+        session.createQuery(query, hibernate.entity.Client.class)
                 .getResultList()
                 .forEach(System.out::println);
 

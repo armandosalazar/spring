@@ -23,9 +23,9 @@ public class FormsController {
         return "process-form";
     }
 
-    // Get /forms/process-form-model
+    // Get /forms/process-form-entity
     @RequestMapping("/process-form-model")
-    // public String processFormModel(HttpServletRequest request, Model model) {
+    // public String processFormModel(HttpServletRequest request, Model entity) {
     public String processFormModel(@RequestParam("name") String name, Model model) {
         // String name = request.getParameter("name");
         name = name.concat(" Welcome.");
