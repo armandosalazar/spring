@@ -11,6 +11,9 @@ public class ClientDetails {
     private String web;
     private String phone;
     private String comments;
+    @OneToOne(mappedBy = "clientDetails", cascade = CascadeType.ALL)
+    @JoinColumn(name = "client_id")
+    private Client client;
 
     public ClientDetails() {
 
@@ -54,6 +57,13 @@ public class ClientDetails {
         this.comments = comments;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
 
     @Override
     public String toString() {
