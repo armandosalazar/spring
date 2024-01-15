@@ -8,8 +8,6 @@ public class ClientDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "client_id")
-    private Long clientId;
     private String web;
     private String phone;
     private String comments;

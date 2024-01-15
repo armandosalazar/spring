@@ -3,6 +3,7 @@ package hibernate.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "clients")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +17,7 @@ public class Client {
     //@OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
     //@JoinColumn(name = "client_details_id")
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name ="id")
+    @JoinColumn(name = "client_details_id")
     private ClientDetails clientDetails;
 
     public Client() {
