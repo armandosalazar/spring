@@ -90,4 +90,8 @@ public class Client {
         orders.add(order);
         order.setClient(this);
     }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
 }

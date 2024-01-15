@@ -21,6 +21,9 @@ public class Order {
     @JoinColumn(name = "client_id", referencedColumnName = "id")
     private Client client;
 
+    public Order() {
+    }
+
     public Order(Date date) {
         this.date = date;
     }
