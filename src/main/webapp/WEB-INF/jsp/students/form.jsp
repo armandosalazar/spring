@@ -15,7 +15,7 @@
 <a href="${pageContext.request.contextPath}/">Home</a>
 <h1>Student form</h1>
 
-<%--@elvariable id="student" type="mvc.model.Student"--%>
+<%--@elvariable id="student" type="mvc.entity.Student"--%>
 <form:form action="add-student" modelAttribute="student">
     First name: <form:input path="firstName"/>
     <form:errors path="firstName" cssStyle="color: red;"/><br/>

@@ -1,4 +1,4 @@
-<%--@elvariable id="student" type="mvc.model.Student"--%>
+<%--@elvariable id="student" type="mvc.entity.Student"--%>
 <%--
   Created by IntelliJ IDEA.
   User: armando

@@ -1,4 +1,4 @@
-package mvc.model;
+package mvc.entity;
 
 import jakarta.validation.constraints.*;
 import mvc.validation.ZipCode;

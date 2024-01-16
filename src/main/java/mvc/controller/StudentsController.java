@@ -1,7 +1,7 @@
 package mvc.controller;
 
 import jakarta.validation.Valid;
-import mvc.model.Student;
+import mvc.entity.Student;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
