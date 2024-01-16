@@ -14,8 +14,9 @@
 <body>
 
 <h1>First Example with MVC in Spring</h1>
-<a href="${pageContext.request.contextPath}/forms">Forms</a>
-<a href="students/show-form">Students</a>
+<a href="${pageContext.request.contextPath}/forms">Forms</a><br>
+<a href="students/show-form">Students</a><br>
+<a href="connection">Connection Database</a><br>
 <br>
 
 <img alt="picture of whiteboard" src="${pageContext.request.contextPath}/static/img/whiteboard.jpg" width="250px">
