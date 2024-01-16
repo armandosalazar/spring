@@ -17,7 +17,7 @@
 <a href="${pageContext.request.contextPath}/forms">Forms</a><br>
 <a href="students/show-form">Students</a><br>
 <a href="connection">Connection Database</a><br>
-<a href="crud">CRUD with hibernate and MVC</a>
+<a href="crud/list">CRUD with hibernate and MVC</a>
 <br>
 
 <img alt="picture of whiteboard" src="${pageContext.request.contextPath}/static/img/whiteboard.jpg" width="250px">

@@ -19,11 +19,18 @@ public class CrudController {
         this.clientDao = clientDao;
     }
 
-    @RequestMapping
+    @RequestMapping("/list")
     public String index(Model model) {
         List<Client> clients = clientDao.getClients();
         model.addAttribute("clients", clients);
         System.out.println(clients);
-        return "crud/index";
+        return "crud/list";
+    }
+
+    @RequestMapping("/add-client")
+    public String addClient(Model model) {
+        Client client = new Client();
+        model.addAttribute("client", client);
+        return "crud/add-client";
     }
 }
