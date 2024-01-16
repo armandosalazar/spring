@@ -5,5 +5,11 @@ import mvc.entity.Client;
 import java.util.List;
 
 public interface ClientDao {
-    List<Client> getClients();
+    List<Client> findAll();
+
+    Client findById(int id);
+
+    void save(Client client);
+
+
 }
