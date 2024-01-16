@@ -53,10 +53,11 @@
             <artifactId>hibernate-validator</artifactId>
             <version>8.0.1.Final</version>
         </dependency>
+        <!-- For MySQL driver -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.2.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
         <dependency>
@@ -64,6 +65,19 @@
             <artifactId>hibernate-core</artifactId>
             <version>6.4.1.Final</version>
         </dependency>
+        <!-- For Hibernate 6 with Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>6.1.3</version>
+        </dependency>
+        <!-- For C3P0 connection pool -->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.5</version>
+        </dependency>
+
     </dependencies>
 
 </project>
