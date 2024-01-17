@@ -60,5 +60,12 @@ public class CrudController {
         return "redirect:/crud/list";
     }
 
+    @GetMapping("/delete-client")
+    public String deleteClient(@RequestParam("id") int id) {
+        clientDao.delete(id);
+        System.out.println("Client with id: " + id + " deleted");
+        return "redirect:/crud/list";
+    }
+
 
 }

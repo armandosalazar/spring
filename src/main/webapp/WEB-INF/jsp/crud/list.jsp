@@ -46,7 +46,8 @@
                     </button>
                     <button
                             type="button"
-                            class="btn btn-danger m-2" onclick="window.location.href='delete-client?id=${client.id}'">
+                            class="btn btn-danger m-2" onclick="
+                            if (confirm('Are you sure you want to delete this client?')) window.location.href='delete-client?id=${client.id}'">
                         Delete
                     </button>
                 </td>

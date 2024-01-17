@@ -52,4 +52,12 @@ public class ClientDaoImpl implements ClientDao {
         session.merge(client);
         System.out.println("[*] Update client: " + client);
     }
+
+    @Override
+    public @Transactional void delete(int id) {
+        // get the current hibernate session
+        Session session = sessionFactory.getCurrentSession();
+        // delete the customer
+        session.remove(session.get(Client.class, id));
+    }
 }

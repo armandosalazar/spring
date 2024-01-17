@@ -13,4 +13,6 @@ public interface ClientDao {
 
     void update(Client client);
 
+    void delete(int id);
+
 }

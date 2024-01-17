@@ -37,8 +37,8 @@
             <tr>
                 <td colspan="2">
                     <button type="submit" class="btn btn-primary mb-3">
-                        <c:if test="${client.id == null}">Create</c:if>
-                        <c:if test="${client.id != null}">Update</c:if>
+                        <c:if test="${client.id == 0}">Save</c:if>
+                        <c:if test="${client.id != 0}">Update</c:if>
                     </button>
                 </td>
             </tr>
