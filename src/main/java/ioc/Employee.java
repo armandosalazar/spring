@@ -1,4 +1,4 @@
-package IoC;
+package ioc;
 
 public interface Employee {
 

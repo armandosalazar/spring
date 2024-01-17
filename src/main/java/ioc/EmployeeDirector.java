@@ -1,4 +1,4 @@
-package IoC;
+package ioc;
 
 public class EmployeeDirector implements Employee {
     private final ReportCreation reportCreation;

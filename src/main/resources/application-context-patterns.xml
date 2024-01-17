@@ -8,11 +8,11 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd"
 >
-    <bean id="report" class="IoC.Report"/>
+    <bean id="report" class="ioc.Report"/>
 
     <!-- If scope is not specified, it is singleton by default -->
     <!-- Prototype scope creates new instance every time -->
-    <bean id="employeeSecretary" class="IoC.EmployeeSecretary" scope="prototype">
+    <bean id="employeeSecretary" class="ioc.EmployeeSecretary" scope="prototype">
         <!-- Dependency injection with setter -->
         <property name="reportCreation" ref="report"/>
     </bean>

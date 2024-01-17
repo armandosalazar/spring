@@ -11,17 +11,17 @@
     <context:property-placeholder location="company-information.properties"/>
 
     <!-- Dependency creation -->
-    <bean id="report" class="IoC.Report"/>
+    <bean id="report" class="ioc.Report"/>
 
     <!-- Dependency injection with constructor -->
     <!-- If we want to inject a dependency into a bean, we need to use the ref attribute of the <constructor-arg> element -->
     <!-- The ref attribute takes the name of the bean we want to inject -->
-    <bean id="employee" class="IoC.EmployeeBoss">
+    <bean id="employee" class="ioc.EmployeeBoss">
         <!-- Dependency injection with constructor -->
         <constructor-arg ref="report"/>
     </bean>
     <!-- Dependency injection with setter -->
-    <bean id="employeeSecretary" class="IoC.EmployeeSecretary">
+    <bean id="employeeSecretary" class="ioc.EmployeeSecretary">
         <!-- Dependency injection with setter -->
         <property name="reportCreation" ref="report"/>
         <!-- Field injection with properties file -->

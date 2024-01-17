@@ -9,11 +9,11 @@
        http://www.springframework.org/schema/context/spring-context.xsd"
 >
     <!-- Dependency creation -->
-    <bean id="report" class="IoC.Report"/>
+    <bean id="report" class="ioc.Report"/>
 
     <bean
             id="employeeBoss"
-            class="IoC.EmployeeBoss"
+            class="ioc.EmployeeBoss"
             init-method="init"
             destroy-method="destroy"
     >
