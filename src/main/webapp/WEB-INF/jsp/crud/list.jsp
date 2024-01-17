@@ -22,10 +22,11 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Id</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Email</th>
+            <th class="align-middle">Id</th>
+            <th class="align-middle">First name</th>
+            <th class="align-middle">Last name</th>
+            <th class="align-middle">Email</th>
+            <th class="align-middle">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -33,10 +34,22 @@
         <%--@elvariable id="client" type="mvc.entity.Client"--%>
         <c:forEach items="${clients}" var="client">
             <tr>
-                <td>${client.id}</td>
-                <td>${client.firstName}</td>
-                <td>${client.lastName}</td>
-                <td>${client.email}</td>
+                <td class="align-middle">${client.id}</td>
+                <td class="align-middle">${client.firstName}</td>
+                <td class="align-middle">${client.lastName}</td>
+                <td class="align-middle">${client.email}</td>
+                <td class="align-middle">
+                    <button
+                            type="button"
+                            class="btn btn-primary m-2" onclick="window.location.href='edit-client?id=${client.id}'">
+                        Edit
+                    </button>
+                    <button
+                            type="button"
+                            class="btn btn-danger m-2" onclick="window.location.href='delete-client?id=${client.id}'">
+                        Delete
+                    </button>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

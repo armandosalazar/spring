@@ -11,5 +11,6 @@ public interface ClientDao {
 
     void save(Client client);
 
+    void update(Client client);
 
 }

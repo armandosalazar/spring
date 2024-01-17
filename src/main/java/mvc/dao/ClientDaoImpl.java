@@ -28,7 +28,7 @@ public class ClientDaoImpl implements ClientDao {
     }
 
     @Override
-    public Client findById(int id) {
+    public @Transactional Client findById(int id) {
         // get the current hibernate session
         Session session = sessionFactory.getCurrentSession();
         // get the customer
@@ -42,5 +42,14 @@ public class ClientDaoImpl implements ClientDao {
         Session session = sessionFactory.getCurrentSession();
         // save the customer
         session.persist(client);
+    }
+
+    @Override
+    public @Transactional void update(Client client) {
+        // get the current hibernate session
+        Session session = sessionFactory.getCurrentSession();
+        // update the customer
+        session.merge(client);
+        System.out.println("[*] Update client: " + client);
     }
 }

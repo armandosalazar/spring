@@ -1,4 +1,5 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--
   Created by IntelliJ IDEA.
   User: armando
@@ -6,7 +7,7 @@
   Time: 23:59
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>New Client</title>
@@ -18,7 +19,8 @@
 <main class="container">
     <h1>Client</h1>
     <%--@elvariable id="client" type="mvc.entity.Client"--%>
-    <form:form modelAttribute="client" method="post" action="insert-client">
+    <form:form modelAttribute="client" method="post" action="${client.id != 0 ? 'update-client' : 'save-client'}">
+        <form:hidden path="id"/>
         <table>
             <tr>
                 <td>First name:</td>
@@ -34,7 +36,10 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <button type="submit" class="btn btn-primary mb-3">Save</button>
+                    <button type="submit" class="btn btn-primary mb-3">
+                        <c:if test="${client.id == null}">Create</c:if>
+                        <c:if test="${client.id != null}">Update</c:if>
+                    </button>
                 </td>
             </tr>
         </table>
