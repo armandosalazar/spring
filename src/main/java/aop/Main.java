@@ -8,9 +8,13 @@ public class Main {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(Config.class);
         // get the bean from spring container
-        ClientDAO clientDAO = context.getBean("clientDAO", ClientDAO.class);
+        ClientDao clientDAO = context.getBean("clientDao", ClientDao.class);
+        ClientVipDao clientVipDAO = context.getBean("clientVipDao", ClientVipDao.class);
         // call the business method
-        clientDAO.addClient();
+        clientDAO.addClient(new Client(), "admin"); // this will trigger the aspect
+        clientVipDAO.addClientVip(new Client()); // this will trigger the aspect
+        clientDAO.existsClient(); // this will trigger the aspect
+        clientVipDAO.existsClient(); // this will trigger the aspect
         // close the context
         context.close();
     }
