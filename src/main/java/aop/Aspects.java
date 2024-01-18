@@ -1,5 +1,6 @@
 package aop;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -15,7 +16,14 @@ public class Aspects {
     }
 
     @Before("forClient()")
-    public void beforeAddClient2() {
-        System.out.println("Aspects.beforeAddClient2(): second advice");
+    public void beforeAddClient(JoinPoint joinPoint) {
+        System.out.println("Aspects.beforeAddClient(): second advice");
+        Object[] args = joinPoint.getArgs();
+        for (Object arg : args) {
+            if (arg instanceof Client client) {
+                System.out.println("Client name: " + client.getFullName());
+                System.out.println("Client type: " + client.getType());
+            }
+        }
     }
 }

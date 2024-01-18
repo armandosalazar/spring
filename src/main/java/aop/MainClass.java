@@ -8,7 +8,10 @@ public class MainClass {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
         ClientDaoAspects clientDaoAspects = context.getBean("clientDaoAspects", ClientDaoAspects.class);
-        clientDaoAspects.addClient();
+        Client client = new Client();
+        client.setFullName("Armando Salazar");
+        client.setType("VIP");
+        clientDaoAspects.addClient(client, client.getType());
 
         context.close();
     }
