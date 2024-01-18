@@ -1,11 +1,13 @@
-package aop;
+package aop.dao;
 
+
+import aop.Client;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ClientDao {
-    public void addClient(Client client, String type) {
-        System.out.println(getClass() + ": DOING MY DB WORK: ADDING A CLIENT");
+public class ClientVipDao {
+    public void addClientVip(Client client) {
+        System.out.println(getClass() + ": DOING MY DB WORK: ADDING A VIP CLIENT");
     }
 
     public void existsClient() {

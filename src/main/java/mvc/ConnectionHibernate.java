@@ -24,7 +24,7 @@ public class ConnectionHibernate extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // super.doGet(request, response); // TODO: remove this line for fix error 405 (Method Not Allowed)
+        // super.doGet(request, response); // remove this line for fix error 405 (Method Not Allowed)
         String url = "jdbc:mysql://localhost:8889/hibernate?useSSL=false";
         String username = "root";
         String password = "root";
