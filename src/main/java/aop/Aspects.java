@@ -1,12 +1,13 @@
 package aop;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Aspect
@@ -43,5 +44,26 @@ public class Aspects {
                 System.out.println("VIP client: " + client.getFullName());
             client.setFullName(client.getFullName().toUpperCase());
         }
+    }
+
+    @AfterThrowing(pointcut = "execution(* aop.dao.ClientDaoAspects.getClients(..))", throwing = "exception")
+    public void afterThrowingGetClients(Exception exception) {
+        // save to file
+        try {
+            File file = new File("src/main/java/aop/clients.log");
+            FileWriter fileWriter = new FileWriter(file, true);
+            fileWriter.write(
+                    formatDate(LocalDateTime.now()) + " " + exception.getMessage() + "\n"
+            );
+            fileWriter.close();
+        } catch (Exception e) {
+            System.out.println("Aspects.afterThrowingGetClients(): " + e.getMessage());
+        }
+        System.out.println("Aspects.afterThrowingGetClients()");
+    }
+
+    private String formatDate(LocalDateTime localDateTime) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        return localDateTime.format(formatter);
     }
 }

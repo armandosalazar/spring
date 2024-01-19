@@ -12,7 +12,11 @@ public class MainClass {
         // client.setFullName("Armando Salazar");
         // client.setType("VIP");
         // clientDaoAspects.addClient(client, client.getType());
-        System.out.println("MainClass.main(): " + clientDaoAspects.getClients());
+        try {
+            System.out.println("MainClass.main(): " + clientDaoAspects.getClients(true));
+        } catch (Exception e) {
+            System.out.println("MainClass.main(): " + e.getMessage());
+        }
 
         context.close();
     }

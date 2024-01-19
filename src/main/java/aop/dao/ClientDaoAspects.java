@@ -11,7 +11,9 @@ public class ClientDaoAspects {
         System.out.println("ClientDaoAspects.addClient()");
     }
 
-    public List<Client> getClients() {
+    public List<Client> getClients(boolean throwException) {
+        if (throwException) throw new RuntimeException("Error when getting customers, check your connection to the database");
+
         System.out.println("ClientDaoAspects.getClients()");
         return List.of(
                 new Client("Armando Salazar", "VIP"),
