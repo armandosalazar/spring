@@ -47,6 +47,7 @@ public class Aspects {
     }
 
     @AfterThrowing(pointcut = "execution(* aop.dao.ClientDaoAspects.getClients(..))", throwing = "exception")
+    // when exception is thrown
     public void afterThrowingGetClients(Exception exception) {
         // save to file
         try {
@@ -66,4 +67,10 @@ public class Aspects {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         return localDateTime.format(formatter);
     }
+
+    @After("execution(* aop.dao.ClientDaoAspects.getClients(..))") // after finally always executes
+    public void afterGetClients(JoinPoint joinPoint) {
+        System.out.println("Aspects.afterGetClients() - finally");
+    }
+
 }
