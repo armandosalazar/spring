@@ -6,6 +6,7 @@
 - Tomcat 9 no funciona con el mvc, mejor utilizar tomcat 10.
 - Importante crear una carpeta dentro de src/main/, llamada webapp/, que contenga el WEB-INF/ y dentro de este el jsp/home.jsp, spring-servlet.xml y web.xml, todo esto para la configuración de nuestra página web utilizando MVC.
 - Para que funcione el mvc, es necesario añadir en el pom.xml, la dependencia de spring-webmvc, que contiene ya beans, context, core, etc.
+- Si hay problemas a la hora de desplegar el proyecto, es porque aún están los archivos .xml de configuración para mvc.
 
 # Configuración de Spring MVC
 ```xml
