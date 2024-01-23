@@ -33,7 +33,7 @@ public class UserRestController {
             throw new UserNotFoundException("User id(" + id + ") not found!");
         }
 
-        return users.get(--id);
+        return users.get(id);
     }
 
     @ExceptionHandler
@@ -41,5 +41,10 @@ public class UserRestController {
         ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 404, System.currentTimeMillis());
         // ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), HttpStatus.NOT_FOUND, System.currentTimeMillis());
         return ResponseEntity.status(404).body(errorResponse);
+    }
+
+    @ExceptionHandler // This annotation is used to handle all exceptions
+    public ErrorResponse handleException(Exception e) {
+        return new ErrorResponse(e.getMessage(), 400, System.currentTimeMillis());
     }
 }
