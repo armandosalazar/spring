@@ -1,10 +1,9 @@
 package rest;
 
 import jakarta.annotation.PostConstruct;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import rest.entities.User;
 
 import java.util.ArrayList;
@@ -30,6 +29,17 @@ public class UserRestController {
 
     @GetMapping("/{id}")
     public User getUser(@PathVariable("id") int id) {
+        if (id < 0 || id >= users.size()) {
+            throw new UserNotFoundException("User id(" + id + ") not found!");
+        }
+
         return users.get(--id);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorResponse> handleException(UserNotFoundException e) {
+        ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), 404, System.currentTimeMillis());
+        // ErrorResponse errorResponse = new ErrorResponse(e.getMessage(), HttpStatus.NOT_FOUND, System.currentTimeMillis());
+        return ResponseEntity.status(404).body(errorResponse);
     }
 }
